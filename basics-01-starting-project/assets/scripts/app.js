@@ -4,7 +4,6 @@ let arrayTest = [];
 let arrayTest2 = [];
 //converting string to a int
 function getUserNumberInput() {
-    
     return parseInt(userInput.value);
 }
 
@@ -13,6 +12,9 @@ function createAndWriteOutput(operator, resultBeforeCalc, calcNumber) {
     const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`
     outputResult(currentResult, calcDescription);
 }
+
+//hide the calcDescription when the website loads first time
+createAndWriteOutput('', '', '');
 
 function writeToArray(oper, prev, num, res) {
     const logEntry = {
@@ -68,6 +70,7 @@ function reset() {
     createAndWriteOutput('', '', '');
     arrayTest = [];
     arrayTest2 = [];
+    userInput.value = null;
 }
 
 //calling functions by Listener.
